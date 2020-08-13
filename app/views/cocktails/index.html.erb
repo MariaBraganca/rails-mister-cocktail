@@ -1,0 +1,12 @@
+<div class="container">
+	<h1>All Cocktails</h1>
+	<ul class="list-group list-group-flush">
+		<% @cocktails.each do |cocktail| %>
+			<li class="list-group-item">
+				<%= cocktail.name %>
+				<%= link_to 'See more details', cocktail_path(cocktail) %>
+			</li>		
+		<% end %>
+		<%= link_to "Add a new cocktail", new_cocktail_path %>
+	</ul>
+</div>
