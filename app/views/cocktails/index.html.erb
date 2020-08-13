@@ -1,12 +1,12 @@
 <div class="container">
 	<h1>All Cocktails</h1>
-	<ul class="list-group list-group-flush">
+	<div class="d-flex">
 		<% @cocktails.each do |cocktail| %>
-			<li class="list-group-item">
-				<%= cocktail.name %>
+			<div class="cocktail-card my-4 mr-4">
+				<p><i class="fas fa-cocktail"></i> <%= cocktail.name %></p>
 				<%= link_to 'See more details', cocktail_path(cocktail) %>
-			</li>		
+			</div>		
 		<% end %>
-		<%= link_to "Add a new cocktail", new_cocktail_path %>
-	</ul>
+	</div>
+	<%= link_to "Add a new cocktail", new_cocktail_path, :class => "btn btn-primary" %>
 </div>
