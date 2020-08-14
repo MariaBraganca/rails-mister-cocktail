@@ -33,8 +33,11 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 
-# Secret keys
+# Secret keys gem
 gem 'dotenv-rails', groups: [:development, :test]
+
+# Cloudinary gem
+gem 'cloudinary', '~> 1.12.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

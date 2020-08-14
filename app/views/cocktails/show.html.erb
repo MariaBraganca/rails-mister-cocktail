@@ -1,5 +1,10 @@
 <div class="container">
 	<h1><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
+	<% if @cocktail.photo.attached? %>
+		<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, :class => 'my-2' %>
+	<%# else %>
+		<%#= cl_image_tag("blyvqt2judffrqw82qtn", height: 300, width: 400, crop: :fill) %>
+	<% end %>
 	<ul class="list-group list-group-flush">
 		<% @cocktail.doses.each do |dose| %>
 			<li class="list-group-item">
@@ -12,7 +17,7 @@
 	</ul>
 
 
-	<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+	<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), :class => "btn btn-primary mb-2" %>
 	<br>
-	<%= link_to "Back to cocktail's list", root_path %>
+	<%= link_to "Back to cocktail's list", root_path, :class => "btn btn-outline-primary" %>
 </div>
