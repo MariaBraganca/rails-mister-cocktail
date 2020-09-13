@@ -1,6 +1,5 @@
 <div class="container">
-	<h1 class="my-4"><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
-	<div class="row mb-5">
+	<div class="row my-5">
 		<div class="col-12 col-lg-6">
 			<% if @cocktail.photo.attached? %>
 				<%= cl_image_tag(@cocktail.photo.key, :class => 'card-cocktail-img') %>
@@ -9,7 +8,8 @@
 			<% end %>
 		</div>
 		<div class="col-12 col-lg-6">
-			<h2 class="mb-3">Ingredients</h2>
+			<h1 class="mb-3"><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
+			<h3 class="mb-3">Ingredients</h3>
 			<ul class="list-group">
 				<% @cocktail.doses.each do |dose| %>
 					<li class="list-group-item d-flex justify-content-between">

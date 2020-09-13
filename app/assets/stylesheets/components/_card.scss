@@ -1,12 +1,12 @@
 .card-cocktail {
 	overflow: hidden;
-	background: white;
+	border-radius: 3px;
+	background-color: white;
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
-	border-radius: 6px;
   }
   
   .card-cocktail-img {
-	height: 200px;
+	height: 100%;
 	width: 100%;
 	object-fit: cover;
   }
@@ -24,7 +24,7 @@
   }
   
   .card-cocktail .card-cocktail-infos {
-	padding: 16px;
+	padding: 12px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
