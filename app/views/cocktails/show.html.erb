@@ -8,9 +8,9 @@
 			<% end %>
 		</div>
 		<div class="col-12 col-lg-6">
-			<h1 class="mb-3"><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
-			<h3 class="mb-3">Ingredients</h3>
-			<ul class="list-group">
+			<h1 class="border-bottom pb-3 mb-3"><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
+			<h3>Ingredients</h3>
+			<ul class="list-group list-group-flush">
 				<% @cocktail.doses.each do |dose| %>
 					<li class="list-group-item d-flex justify-content-between">
 						<%= dose.description %> of <%= dose.ingredient.name %>
@@ -20,9 +20,7 @@
 					</li>
 				<% end %>
 			</ul>
-			<%= link_to new_cocktail_dose_path(@cocktail), :class => "btn btn-primary my-3" do %>
-				<i class="fas fa-plus"></i>
-			<% end %>
+			<%= link_to 'Add a new ingredient', new_cocktail_dose_path(@cocktail), :class => "btn btn-primary my-3" %>
 		</div>
 	</div>
 	<%= link_to "Back to cocktail's list", root_path, :class => "btn btn-outline-primary" %>

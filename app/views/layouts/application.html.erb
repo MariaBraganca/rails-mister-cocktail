@@ -15,15 +15,20 @@
 
   <body>
     <%= yield %>
-    <!-- bubbly-bg 
+    <!-- bubbly-bg
     <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script> 
     <script>
       bubbly({
-        colorStart: '#4c004c',
-        colorStop: '#1a001a',
-        bubbleFunc:() => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`
+        blur:15,
+        colorStart: '#6d597a',
+        colorStop: '#b56576',
+        radiusFunc:() => 5 + Math.random() * 15,
+        angleFunc:() => -Math.PI / 2,
+        velocityFunc:() => Math.random() * 5,
+        bubbleFunc:() => `hsla(${200 + Math.random() * 50}, 100%, 65%, .1)`,
+        bubbles:350
       });
     </script> 
-    -->
+     -->
   </body>
 </html>
