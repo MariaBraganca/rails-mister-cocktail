@@ -1611,6 +1611,11 @@ browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.6.4, browserslist@^4.
     escalade "^3.0.2"
     node-releases "^1.1.60"
 
+bubbly-bg@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/bubbly-bg/-/bubbly-bg-1.0.0.tgz#f336db37981c8603f3dd4ab1d731557896920048"
+  integrity sha512-sqTWKaeRjWywlXzDEL12z2lxhjG/hPK/0uWkl59hBSIdsA1y3GPRLHfkTelcufY0tQVtXCqKYQDvlW1XHNw53A==
+
 buffer-from@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"

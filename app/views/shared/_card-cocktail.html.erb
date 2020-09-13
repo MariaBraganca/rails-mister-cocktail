@@ -1,0 +1,10 @@
+<div class="card-cocktail">
+	<% if cocktail_within.photo.attached? %>
+		<%= cl_image_tag(cocktail_within.photo.key, :class => 'card-cocktail-img') %>
+	<% else %>
+		<%= image_tag(cocktail_within.thumb_url, :class => 'card-cocktail-img') %>
+	<% end %>
+	<div class="card-cocktail-infos">
+		<h2><i class="fas fa-cocktail"></i> <%= cocktail_within.name %></h5>
+	</div>
+</div>	

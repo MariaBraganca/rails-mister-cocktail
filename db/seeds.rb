@@ -8,14 +8,26 @@
 require 'json'
 require 'open-uri'
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-ingredients_serialized = open(url).read
-ingredients = JSON.parse(ingredients_serialized)
+letters = [*('a'..'z')]
 
-ingredients = ingredients['drinks']
+letters.each do |letter|
+  url="https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
+  cocktails_serialized = open(url).read
+  cocktails = JSON.parse(cocktails_serialized)
 
-ingredients.each do |ingredient|
-  
-  Ingredient.create!(name: ingredient["strIngredient1"])
-  puts 'an ingredient was created!'
+  next if cocktails["drinks"].nil?
+
+  cocktails["drinks"].each do |drink|
+    cocktail = Cocktail.create!(name: drink["strDrink"], thumb_url: drink["strDrinkThumb"])
+    (1..15).each do |i|
+      next if drink["strIngredient#{i}"].nil? || drink["strMeasure#{i}"].nil?
+      next if drink["strIngredient#{i}"].blank? || drink["strMeasure#{i}"].blank?
+      ingredient = Ingredient.where(name: drink["strIngredient#{i}"]).first_or_create!
+      dose = Dose.create!(
+        cocktail_id: cocktail.id,
+        ingredient_id: ingredient.id,
+        description: drink["strMeasure#{i}"]
+      )
+    end
+  end
 end

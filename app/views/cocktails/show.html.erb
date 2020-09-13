@@ -1,23 +1,29 @@
 <div class="container">
-	<h1><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
-	<% if @cocktail.photo.attached? %>
-		<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, :class => 'rounded my-2' %>
-	<%# else %>
-		<%#= cl_image_tag("blyvqt2judffrqw82qtn", height: 300, width: 400, crop: :fill) %>
-	<% end %>
-	<ul class="list-group list-group-flush">
-		<% @cocktail.doses.each do |dose| %>
-			<li class="list-group-item">
-				<%= dose.description %>
-				<%= dose.ingredient.name %>
-				<%= link_to 'Delete dose', dose_path(dose), method: :delete, data: { confirm: "Are you sure you want to delete" } %>
-				
-			</li>
-		<% end %>
-	</ul>
-
-
-	<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), :class => "btn btn-primary mb-2" %>
-	<br>
+	<h1 class="my-4"><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
+	<div class="row mb-5">
+		<div class="col-12 col-lg-6">
+			<% if @cocktail.photo.attached? %>
+				<%= cl_image_tag(@cocktail.photo.key, :class => 'card-cocktail-img') %>
+			<% else %>
+				<%= image_tag(@cocktail.thumb_url, :class => 'image-show') %>
+			<% end %>
+		</div>
+		<div class="col-12 col-lg-6">
+			<h2 class="mb-3">Ingredients</h2>
+			<ul class="list-group">
+				<% @cocktail.doses.each do |dose| %>
+					<li class="list-group-item d-flex justify-content-between">
+						<%= dose.description %> of <%= dose.ingredient.name %>
+						<%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure you want to delete" } do %>
+							<i class="far fa-trash-alt"></i>
+						<% end %>
+					</li>
+				<% end %>
+			</ul>
+			<%= link_to new_cocktail_dose_path(@cocktail), :class => "btn btn-primary my-3" do %>
+				<i class="fas fa-plus"></i>
+			<% end %>
+		</div>
+	</div>
 	<%= link_to "Back to cocktail's list", root_path, :class => "btn btn-outline-primary" %>
 </div>
