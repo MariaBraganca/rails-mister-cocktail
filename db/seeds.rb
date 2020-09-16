@@ -18,7 +18,11 @@ letters.each do |letter|
   next if cocktails["drinks"].nil?
 
   cocktails["drinks"].each do |drink|
-    cocktail = Cocktail.create!(name: drink["strDrink"], thumb_url: drink["strDrinkThumb"])
+    cocktail = Cocktail.create!(
+      name: drink["strDrink"], 
+      thumb_url: drink["strDrinkThumb"],
+      instruction:drink["strInstructions"]
+      )
     (1..15).each do |i|
       next if drink["strIngredient#{i}"].nil? || drink["strMeasure#{i}"].nil?
       next if drink["strIngredient#{i}"].blank? || drink["strMeasure#{i}"].blank?

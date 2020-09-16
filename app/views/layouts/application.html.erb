@@ -8,27 +8,34 @@
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
+    <br>
+    <br>
+    <br>
     <%= yield %>
-    <!-- bubbly-bg
+    <!-- bubbly-bg 
     <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script> 
     <script>
       bubbly({
-        blur:15,
-        colorStart: '#6d597a',
-        colorStop: '#b56576',
+        blur:9,
+        colorStart: '#f4f4f4',
+        colorStop: '#ffffff',
         radiusFunc:() => 5 + Math.random() * 15,
         angleFunc:() => -Math.PI / 2,
-        velocityFunc:() => Math.random() * 5,
+        velocityFunc:() => Math.random() * 7.5,
         bubbleFunc:() => `hsla(${200 + Math.random() * 50}, 100%, 65%, .1)`,
-        bubbles:350
+        bubbles:150,
       });
-    </script> 
-     -->
+    </script>
+    -->
+    
   </body>
 </html>

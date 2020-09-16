@@ -1,0 +1,26 @@
+.btn-search {
+    background-color: hsl(180, 100%, 50%);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-add{
+    background-color:  hsl(283, 100%, 83%);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-search:hover,
+.btn-add:hover {
+    color: white;
+}
+
+.btn-search:hover {
+    color: white;
+    background-color: hsl(180, 100%, 40%);
+}
+
+.btn-add:hover {
+    color: white;
+    background-color: hsl(283, 100%, 70%);
+}

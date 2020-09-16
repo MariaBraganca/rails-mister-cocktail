@@ -1,27 +1,38 @@
 <div class="container">
 	<div class="row my-5">
 		<div class="col-12 col-lg-6">
-			<% if @cocktail.photo.attached? %>
-				<%= cl_image_tag(@cocktail.photo.key, :class => 'card-cocktail-img') %>
-			<% else %>
-				<%= image_tag(@cocktail.thumb_url, :class => 'image-show') %>
-			<% end %>
+				<% if @cocktail.photo.attached? %>
+					<%= link_to cocktail_path(@cocktail) do %>
+						<%= cl_image_tag(@cocktail.photo.key, :class => "card-cocktail-img")%>
+					<% end %>
+				<% else %>
+					<%= link_to cocktail_path(@cocktail) do %>
+						<%= image_tag(@cocktail.thumb_url, :class => "card-cocktail-img")%>
+					<% end %>
+				<% end %>
 		</div>
 		<div class="col-12 col-lg-6">
-			<h1 class="border-bottom pb-3 mb-3"><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h1>
-			<h3>Ingredients</h3>
-			<ul class="list-group list-group-flush">
+			<h1 class="text-center mb-3"><%= @cocktail.name %></h1>
+			<div class="d-flex justify-content-between align-items-end mb-3">
+				<h3 class="mb-0">Doses</h3>
+				<%= link_to new_cocktail_dose_path(@cocktail), :class => "btn btn-dark" do %>
+					<i class="fas fa-plus"></i>
+				<% end %>
+			</div>
+			<ul class="card-table mb-4">
 				<% @cocktail.doses.each do |dose| %>
-					<li class="list-group-item d-flex justify-content-between">
-						<%= dose.description %> of <%= dose.ingredient.name %>
+					<li class="d-flex justify-content-between">
+						<p class="my-2"><strong><%= dose.description %></strong> of <%= dose.ingredient.name %></p>
 						<%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure you want to delete" } do %>
 							<i class="far fa-trash-alt"></i>
 						<% end %>
 					</li>
 				<% end %>
 			</ul>
-			<%= link_to 'Add a new ingredient', new_cocktail_dose_path(@cocktail), :class => "btn btn-primary my-3" %>
+			<h3>Instructions</h3>
+			<p><%= @cocktail.instruction %></p>
+
 		</div>
 	</div>
-	<%= link_to "Back to cocktail's list", root_path, :class => "btn btn-outline-primary" %>
+	<%#= link_to "Back to cocktail's list", root_path, :class => "btn btn-outline-dark" %>
 </div>

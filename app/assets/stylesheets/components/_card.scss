@@ -1,33 +1,88 @@
-.card-cocktail {
-	overflow: hidden;
-	border-bottom: 1px solid lightgray;
-  }
-  
-  .card-cocktail-img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-  }
-  
-  .card-cocktail h2 {
-	font-size: 16px;
-	font-weight: bold;
-	margin: 0;
-  }
-  
-  .card-cocktail p {
-	font-size: 12px;
-	opacity: .7;
-	margin: 0;
-  }
-  
-  .card-cocktail .card-cocktail-infos {
-	padding: 12px;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	position: relative;
-  }
+	.card-cocktail {
+		height: 30vh;
+		width: 30vh;
+		margin: 3vh;
+		background-size: cover;
+		background-position: center;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 18px;
+		position: relative;
+		z-index: 1;
+	}
+
+	text {
+		fill: white;
+		text-anchor: start;
+	}
+
+	path {
+		fill: transparent;
+	}
+
+	.drink {
+		position: relative;
+	}
+
+	.card-cocktail-img {
+		width: 84%;
+		height: 84%;
+		border-radius: 50%;
+		margin: 8%;
+	}
+
+  	.drink:hover .effect-1,
+	.drink:hover .effect-2 {
+		display: block;
+	}
+
+	.effect-1,
+	.effect-2 {
+		display: none;
+		mix-blend-mode: multiply;
+		opacity: 1;
+		position: absolute;
+		height: 30vh;
+		width: 30vh;
+		border-radius: 50%;
+	}
+
+	.effect-1 {
+		animation: rotate 1.8s linear infinite;
+		background: cyan;
+	}
+	
+	.effect-2 {
+		animation: rotate 1.2s linear reverse infinite;
+		background: #e7a9ff;
+	}
+
+	@keyframes rotate {
+		0% {
+			top: 0;
+			left: 8%;
+		}
+		25% {
+			top: 8%;
+			left: 0%;
+		}
+		50% {
+			top: 16%;
+			left: 8%;
+		}
+		75% {
+			top: 8%;
+			left: 16%;
+		}
+		100% {
+			top: 0;
+			left: 8%;
+		}
+	}
 
   a {
 		text-decoration: none;
@@ -37,4 +92,10 @@
 	a:hover {
 		text-decoration: none;
 		color: inherit;
+  }
+
+  .card-table {
+	  border-top: 2px solid black;
+	  border-bottom: 2px solid black;
+	  padding: 10px 0px;
   }
