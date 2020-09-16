@@ -1,0 +1,29 @@
+.footer {
+    background-color: black;
+		color: white;
+		position: relative;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: 14px;
+  }
+  .footer a {
+    opacity: 0.75;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0px 10px;
+    transition: background 0.3s ease;
+  }
+  .footer a:hover {
+    opacity: 1;
+  }
+  .footer p {
+    opacity: 0.75;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  .footer .fa-heart {
+    color: hsl(283, 100%, 80%);
+  }
