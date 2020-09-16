@@ -1,7 +1,7 @@
 	.card-cocktail {
-		height: 30vh;
-		width: 30vh;
-		margin: 3vh;
+		height: 84%;
+		width: 84%;
+		margin: 8%;
 		background-size: cover;
 		background-position: center;
 		border-radius: 50%;
@@ -10,12 +10,13 @@
 		align-items: center;
 		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 		font-family: 'Josefin Sans', sans-serif;
-		font-size: 18px;
+		font-size: 100%;
 	}
 
 	text {
 		fill: white;
 		text-anchor: start;
+		font-size: 18px;
 	}
 
 	path {
@@ -44,8 +45,8 @@
 		mix-blend-mode: multiply;
 		opacity: 1;
 		position: absolute;
-		height: 30vh;
-		width: 30vh;
+		height: 84%;
+		width: 84%;
 		border-radius: 50%;
 		z-index: -1;
 	}
