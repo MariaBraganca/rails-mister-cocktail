@@ -8,10 +8,10 @@
 require 'json'
 require 'open-uri'
 
-letters = [*('a'..'z')]
+chars = [*('0'..'9'), *('a'..'z')]
 
-letters.each do |letter|
-  url="https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
+chars.each do |character|
+  url="https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{character}"
   cocktails_serialized = open(url).read
   cocktails = JSON.parse(cocktails_serialized)
 
@@ -21,7 +21,10 @@ letters.each do |letter|
     cocktail = Cocktail.create!(
       name: drink["strDrink"], 
       thumb_url: drink["strDrinkThumb"],
-      instruction:drink["strInstructions"]
+      instruction: drink["strInstructions"],
+      category: drink["strCategory"],
+      alcoholic: drink["strAlcoholic"],
+      glass: drink["strGlass"]
       )
     (1..15).each do |i|
       next if drink["strIngredient#{i}"].nil? || drink["strMeasure#{i}"].nil?
