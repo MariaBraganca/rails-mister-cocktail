@@ -33,9 +33,14 @@
 		width: 95%;
 		padding-top: 95%;
 		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: 'Josefin Sans', sans-serif;
+		color: white;
 	}
 
-  	.drink:hover .effect-1,
+  .drink:hover .effect-1,
 	.drink:hover .effect-2 {
 		display: block;
 	}
@@ -99,4 +104,10 @@
 	  border-top: 2px solid black;
 	  border-bottom: 2px solid black;
 	  padding: 10px 0px;
-  }
+	}
+	
+	.attr-table {
+		display: flex;
+		justify-content: space-between;
+		color: darkgray;
+	}
