@@ -3,11 +3,6 @@ class CocktailsController < ApplicationController
 
   def index
     if params[:query].present?
-      # @cocktails = Cocktail.where(name: params[:query])
-      # LIKE, search for matching string, case sensitive
-      # ILIKE, search for matching string, case insensitive
-      # @@ full text, search for multiple terms
-      # @cocktails = Cocktail.where("name @@ :query", query: "%#{params[:query]}%")
       @cocktails = Cocktail.search_by_name(params[:query])
     else
       @cocktails = Cocktail.all
