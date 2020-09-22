@@ -33,6 +33,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 
+# Tags gem
+gem 'acts-as-taggable-on', '~> 6.0'
+
 # pg search gem
 gem 'pg_search'
 

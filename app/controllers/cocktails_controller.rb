@@ -4,6 +4,12 @@ class CocktailsController < ApplicationController
   def index
     if params[:query].present?
       @cocktails = Cocktail.search_by_name(params[:query])
+    elsif params[:search_category]
+      @cocktails = Cocktail.where(category: params[:search_category][:category])
+    elsif params[:search_alcoholic]
+      @cocktails = Cocktail.where(alcoholic: params[:search_alcoholic][:alcoholic])
+    elsif params[:search_glass]
+      @cocktails = Cocktail.where(glass: params[:search_glass][:glass])
     else
       @cocktails = Cocktail.all
     end
