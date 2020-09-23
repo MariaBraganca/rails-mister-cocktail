@@ -1,15 +1,15 @@
 .btn-search {
     background-color: hsl(180, 100%, 45%);
     color: white;
-    font-weight: bold;
     transition: background 0.3s ease;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .btn-add {
     background-color:  hsl(283, 100%, 80%);
     color: white;
-    font-weight: bold;
     transition: background 0.3s ease;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .btn-search:hover,
@@ -30,11 +30,31 @@
 .btn-outline-add {
     border: 1px solid hsl(283, 100%, 80%);
     color:hsl(283, 100%, 80%);
-    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
     transition: background 0.3s ease;
 }
 
 .btn-outline-add:hover {
     color: hsl(283, 100%, 75%);
     border: 1px solid hsl(283, 100%, 75%);
+}
+
+.cocktail-drop {
+    max-height: 600px;
+    min-width: 275px;
+    overflow-y: scroll;
+    padding: 15px 30px;
+}
+
+.cocktail-drop label {
+    padding-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.cocktail-drop legend {
+    display: none;
 }

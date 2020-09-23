@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-lg navbar-light fixed-top navbar-cocktail">
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-cocktail"></i> Mister Cocktail
   <% end %>
@@ -10,21 +10,59 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <!-- Category -->
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+          Categories
+        <% end %>
+        <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
+          <%= simple_form_for :search_category, url: root_path, method: "GET" do |f| %>
+            <%= f.input :category, collection: $categories, label: false, as: :check_boxes, label_html: { class: 'hidden' } %>
+            <%= f.submit "Search", class: "btn btn-primary w-100" %>
+          <% end %>
+        </div>
+      </li>
+      <!-- Alcoholic -->
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+          Alcoholic
+        <% end %>
+        <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
+          <%= simple_form_for :search_alcoholic, url: root_path, method: "GET" do |f| %>
+            <%= f.input :alcoholic, collection: $alcoholics, label: false, as: :check_boxes %>
+            <%= f.submit "Search", class: "btn btn-primary w-100" %>
+          <% end %>
+        </div>
+      </li>
+      <!-- Glass -->
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
+          Glass
+        <% end %>
+        <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
+          <%= simple_form_for :search_glass, url: root_path, method: "GET" do |f| %>
+            <%= f.input :glass, collection: $glasses, label: false, as: :check_boxes %>
+            <%= f.submit "Search", class: "btn btn-primary w-100" %>
+          <% end %>
+        </div>
+      </li>
+      </ul>
+      <!-- Search -->
+      <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <%= form_tag root_path, method: :get do %>
 					<div class="d-flex mr-3">		
-					<%= text_field_tag :query,
-						params[:query],
-						class: "form-control",
-						placeholder: "Find a cocktail"
-					%>
-					<%= submit_tag ">", class: "btn btn-search" %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a cocktail"
+            %>
+            <%= submit_tag "Search", class: "btn btn-search" %>
 					</div>
 				<% end %>
       </li>
       <li class="nav-item active">
-        <%= link_to "+", new_cocktail_path, :class => "btn btn-add" %>
-
+        <%= link_to "Add a cocktail", new_cocktail_path, :class => "btn btn-add" %>
       </li>
     </ul>
   </div>
