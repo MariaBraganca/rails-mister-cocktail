@@ -100,14 +100,18 @@
 		color: inherit;
   }
 
-  .card-table {
-	  border-top: 2px solid black;
-	  border-bottom: 2px solid black;
+  .heading {
+	padding-bottom: 10px;
+	border-bottom: 2px solid black;
+  }
+  	.card-table {
 	  padding: 10px 0px;
 	}
-	
-	.attr-table {
-		display: flex;
-		justify-content: space-between;
-		color: darkgray;
+
+
+	ul {
+		padding-left: 0;
+	}
+	li {
+		list-style: none;
 	}

@@ -1,19 +1,29 @@
 <div class="container v-height">
 	<div class="row my-5">
+		<!-- Cocktail Image -->
 		<div class="col-12 col-lg-6">
-				<% if @cocktail.photo.attached? %>
-					<div class="card-cocktail-img mx-auto mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@cocktail.photo.key) %>)">
-					</div>
-				<% else %>
-					<div class="card-cocktail-img mx-auto mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(@cocktail.thumb_url) %>)">
-					</div>
-				<% end %>
+			<% if @cocktail.photo.attached? %>
+				<div class="card-cocktail-img mx-auto mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@cocktail.photo.key) %>)">
+				</div>
+			<% elsif @cocktail.thumb_url %>
+				<div class="card-cocktail-img mx-auto mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(@cocktail.thumb_url) %>)">
+				</div>
+			<% else %>
+				<div class="card-cocktail-img mx-auto mb-5" style="background-color: lightgray">
+				</div>
+			<% end %>
 		</div>
+		<!-- Cocktail Description -->
 		<div class="col-12 col-lg-6">
+			<!-- Cocktail Name -->
 			<h1 class="text-center mb-3"><%= @cocktail.name %></h1>
-			<div class="d-flex justify-content-between align-items-end mb-3">
+			<!-- Doses -->
+			<div class="d-flex justify-content-between align-items-end mb-3 heading">
 				<h3 class="mb-0">Doses</h3>
-				<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), :class => "btn btn-outline-add" %>
+				<button type="button" class="btn btn-outline-add" data-toggle="modal" data-target="#doseModal">
+          			Add a dose
+        		</button>
+				<%= render 'shared/add-dose-modal'%>
 			</div>
 			<ul class="card-table mb-3">
 				<% @cocktail.doses.each do |dose| %>
@@ -25,18 +35,40 @@
 					</li>
 				<% end %>
 			</ul>
-			<!-- Labels -->
-			<div class="attr-table mb-3">
-					<p><strong>Category</strong> <%= @cocktail.category %></p>
-					<p>|</p>
-					<p><strong>Alcoholic</strong> <%= @cocktail.alcoholic %></p>
-					<p>|</p>
-					<p><strong>Glass</strong> <%= @cocktail.glass %></p>
-			</div>
 			<!-- Preparation -->
-			<div class="mb-5">
-				<h3>Preparation</h3>
+			<div class="mb-4">
+				<div class="d-flex justify-content-between align-items-end mb-3 heading">
+					<h3 class="mb-0">Preparation</h3>
+					<button type="button" class="btn btn-outline-add" data-toggle="modal" data-target="#prepModal">
+						Edit prep
+					</button>
+					<%= render 'shared/add-prep-modal' %>
+				</div>
 				<p><%= @cocktail.instruction %></p>
+			</div>
+			<!-- Tags -->
+			<div class="d-flex justify-content-between align-items-end mb-3 heading">
+				<h3 class="mb-0">Tags</h3>
+				<button type="button" class="btn btn-outline-add" data-toggle="modal" data-target="#tagModal">
+					Edit tags
+				</button>
+				<%= render 'shared/add-tag-modal' %>
+			</div>
+			<div class="row mb-3">
+				<div class="col-3">
+					<ul class="mb-3">
+						<li><p class="font-weight-bold">Category</p></li>
+						<li><p class="font-weight-bold">Alcoholic</p></li>
+						<li><p class="font-weight-bold">Glass</p></li>
+					</ul>
+				</div>
+				<div class="col-9">
+					<ul class="mb-3">
+						<li><p><%= @cocktail.category %></p></li>
+						<li><p><%= @cocktail.alcoholic %></p></li>
+						<li><p><%= @cocktail.glass %></p></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

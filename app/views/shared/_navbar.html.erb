@@ -1,3 +1,6 @@
+<%= render 'shared/add-cocktail-modal'%>
+<%= render 'shared/edit-cocktail-modal'%>
+
 <div class="navbar navbar-expand-lg navbar-light fixed-top navbar-cocktail">
   <%= link_to root_path, class: "navbar-brand" do %>
     <i class="fas fa-cocktail"></i> Mister Cocktail
@@ -7,10 +10,9 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <!-- Category -->
+      <!-- Category Dropdown -->
       <li class="nav-item dropdown">
         <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
           Categories
@@ -18,11 +20,11 @@
         <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
           <%= simple_form_for :search_category, url: root_path, method: "GET" do |f| %>
             <%= f.input :category, collection: $categories, label: false, as: :check_boxes, label_html: { class: 'hidden' } %>
-            <%= f.submit "Search", class: "btn btn-primary w-100" %>
+            <%= f.submit "Filter", class: "btn btn-primary w-100" %>
           <% end %>
         </div>
       </li>
-      <!-- Alcoholic -->
+      <!-- Alcoholic Dropdown -->
       <li class="nav-item dropdown">
         <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
           Alcoholic
@@ -30,11 +32,11 @@
         <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
           <%= simple_form_for :search_alcoholic, url: root_path, method: "GET" do |f| %>
             <%= f.input :alcoholic, collection: $alcoholics, label: false, as: :check_boxes %>
-            <%= f.submit "Search", class: "btn btn-primary w-100" %>
+            <%= f.submit "Filter", class: "btn btn-primary w-100" %>
           <% end %>
         </div>
       </li>
-      <!-- Glass -->
+      <!-- Glass Dropdown -->
       <li class="nav-item dropdown">
         <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
           Glass
@@ -42,7 +44,7 @@
         <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
           <%= simple_form_for :search_glass, url: root_path, method: "GET" do |f| %>
             <%= f.input :glass, collection: $glasses, label: false, as: :check_boxes %>
-            <%= f.submit "Search", class: "btn btn-primary w-100" %>
+            <%= f.submit "Filter", class: "btn btn-primary w-100" %>
           <% end %>
         </div>
       </li>
@@ -61,8 +63,19 @@
 					</div>
 				<% end %>
       </li>
-      <li class="nav-item active">
-        <%= link_to "Add a cocktail", new_cocktail_path, :class => "btn btn-add" %>
+      <!-- Add a cocktail -->
+      <li class="nav-item">
+        <%#= link_to "Add a cocktail", new_cocktail_path, :class => "btn btn-add" %>
+        <!-- Button trigger modal -->
+        <% if current_page?(root_path) %>
+          <button type="button" class="btn btn-add" data-toggle="modal" data-target="#cocktailModal">
+            Add cocktail
+          </button>
+        <% else %>
+          <button type="button" class="btn btn-add" data-toggle="modal" data-target="#cocktailModalEdit">
+            Edit cocktail
+          </button>
+        <% end %>
       </li>
     </ul>
   </div>

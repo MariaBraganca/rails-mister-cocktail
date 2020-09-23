@@ -33,6 +33,12 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 
+# Bootsrap
+gem 'bootstrap', '~> 5.0.0.alpha1'
+
+# Popperjs
+gem 'popper_js', '~> 1.14.5'
+
 # Tags gem
 gem 'acts-as-taggable-on', '~> 6.0'
 
