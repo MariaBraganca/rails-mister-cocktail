@@ -22,9 +22,9 @@ chars.each do |character|
       name: drink["strDrink"], 
       thumb_url: drink["strDrinkThumb"],
       instruction: drink["strInstructions"],
-      category: drink["strCategory"],
-      alcoholic: drink["strAlcoholic"],
-      glass: drink["strGlass"]
+      category: drink["strCategory"].capitalize,
+      alcoholic: drink["strAlcoholic"].capitalize,
+      glass: drink["strGlass"].capitalize
       )
     (1..15).each do |i|
       next if drink["strIngredient#{i}"].nil? || drink["strMeasure#{i}"].nil?
