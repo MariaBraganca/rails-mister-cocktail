@@ -28,7 +28,7 @@ chars.each do |character|
       )
     (1..15).each do |i|
       next if drink["strIngredient#{i}"].nil? || drink["strIngredient#{i}"].blank?
-      ingredient = Ingredient.where(name: drink["strIngredient#{i}"]).first_or_create!
+      ingredient = Ingredient.where(name: drink["strIngredient#{i}"].capitalize).first_or_create!
       dose = Dose.create!(
         cocktail_id: cocktail.id,
         ingredient_id: ingredient.id,
