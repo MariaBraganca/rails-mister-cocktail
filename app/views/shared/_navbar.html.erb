@@ -20,7 +20,7 @@
         <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
           <%= simple_form_for :search_category, url: root_path, method: "GET" do |f| %>
             <%= f.input :category, collection: $categories, label: false, as: :check_boxes, label_html: { class: 'hidden' } %>
-            <%= f.submit "Filter", class: "btn btn-primary w-100" %>
+            <%= f.submit "Filter", class: "btn btn-filter w-100" %>
           <% end %>
         </div>
       </li>
@@ -32,7 +32,7 @@
         <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
           <%= simple_form_for :search_alcoholic, url: root_path, method: "GET" do |f| %>
             <%= f.input :alcoholic, collection: $alcoholics, label: false, as: :check_boxes %>
-            <%= f.submit "Filter", class: "btn btn-primary w-100" %>
+            <%= f.submit "Filter", class: "btn btn-filter w-100" %>
           <% end %>
         </div>
       </li>
@@ -44,7 +44,7 @@
         <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
           <%= simple_form_for :search_glass, url: root_path, method: "GET" do |f| %>
             <%= f.input :glass, collection: $glasses, label: false, as: :check_boxes %>
-            <%= f.submit "Filter", class: "btn btn-primary w-100" %>
+            <%= f.submit "Filter", class: "btn btn-filter w-100" %>
           <% end %>
         </div>
       </li>

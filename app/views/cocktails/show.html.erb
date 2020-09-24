@@ -1,17 +1,21 @@
 <div class="container v-height">
 	<div class="row my-5">
 		<!-- Cocktail Image -->
-		<div class="col-12 col-lg-6">
+		<div class="col-12 col-lg-6 text-center">
 			<% if @cocktail.photo.attached? %>
-				<div class="card-cocktail-img mx-auto mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@cocktail.photo.key) %>)">
+				<div class="card-cocktail-img mx-auto mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@cocktail.photo.key) %>)">
 				</div>
 			<% elsif @cocktail.thumb_url %>
-				<div class="card-cocktail-img mx-auto mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(@cocktail.thumb_url) %>)">
+				<div class="card-cocktail-img mx-auto mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(@cocktail.thumb_url) %>)">
 				</div>
 			<% else %>
-				<div class="card-cocktail-img mx-auto mb-5" style="background-color: lightgray">
+				<div class="card-cocktail-img mx-auto mb-4 bg-gray">
 				</div>
 			<% end %>
+			<button type="button" class="btn btn-edit mb-5" data-toggle="modal" data-target="#photoModal">
+				Edit photo
+			</button>
+			<%= render 'shared/add-photo-modal' %>
 		</div>
 		<!-- Cocktail Description -->
 		<div class="col-12 col-lg-6">
@@ -20,7 +24,7 @@
 			<!-- Doses -->
 			<div class="d-flex justify-content-between align-items-end mb-3 heading">
 				<h3 class="mb-0">Doses</h3>
-				<button type="button" class="btn btn-outline-add" data-toggle="modal" data-target="#doseModal">
+				<button type="button" class="btn btn-dose" data-toggle="modal" data-target="#doseModal">
           			Add a dose
         		</button>
 				<%= render 'shared/add-dose-modal'%>
@@ -39,7 +43,7 @@
 			<div class="mb-4">
 				<div class="d-flex justify-content-between align-items-end mb-3 heading">
 					<h3 class="mb-0">Preparation</h3>
-					<button type="button" class="btn btn-outline-add" data-toggle="modal" data-target="#prepModal">
+					<button type="button" class="btn btn-edit" data-toggle="modal" data-target="#prepModal">
 						Edit prep
 					</button>
 					<%= render 'shared/add-prep-modal' %>
@@ -49,7 +53,7 @@
 			<!-- Tags -->
 			<div class="d-flex justify-content-between align-items-end mb-3 heading">
 				<h3 class="mb-0">Tags</h3>
-				<button type="button" class="btn btn-outline-add" data-toggle="modal" data-target="#tagModal">
+				<button type="button" class="btn btn-edit" data-toggle="modal" data-target="#tagModal">
 					Edit tags
 				</button>
 				<%= render 'shared/add-tag-modal' %>

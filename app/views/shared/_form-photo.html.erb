@@ -1,0 +1,4 @@
+<%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :photo, as: :file, label: false, class: "img-upload" %>
+    <%= f.submit 'Upload', :class => "btn btn-edit w-100 mb-5" %>
+<% end %>
