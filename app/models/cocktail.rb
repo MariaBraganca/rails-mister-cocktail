@@ -9,11 +9,12 @@ class Cocktail < ApplicationRecord
 	$glasses = Cocktail.distinct.order(:glass).pluck(:glass)
 
 	include PgSearch::Model
-		pg_search_scope :search_by_name,
-			against: :name,
-			using: {
-				tsearch: { prefix: true }
-			}
+	pg_search_scope :search_by_name,
+		against: :name,
+		associated_against: { ingredients: :name },
+		using: {
+			tsearch: { prefix: true }
+		}
 
   validates :name, presence: true, uniqueness: true
   # validates :category, uniqueness: true, case_sensitive: true

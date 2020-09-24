@@ -3,6 +3,7 @@ class CocktailsController < ApplicationController
 
   def index
     if params[:query].present?
+      @term = params[:query]
       @cocktails = Cocktail.search_by_name(params[:query])
     elsif params[:search_category]
       @cocktails = Cocktail.where(category: params[:search_category][:category])
