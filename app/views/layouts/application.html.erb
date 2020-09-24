@@ -19,20 +19,19 @@
     <%= render 'shared/navbar' %>
     <%= yield %>
     <%= render 'shared/footer' %>
-    <!-- bubbly-bg 
+    <!-- bubbly-bg -->
     <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script> 
     <script>
       bubbly({
         blur:9,
         colorStart: '#f4f4f4',
         colorStop: '#ffffff',
-        radiusFunc:() => 5 + Math.random() * 15,
+        radiusFunc:() => 5 + Math.random() * 5,
         angleFunc:() => -Math.PI / 2,
         velocityFunc:() => Math.random() * 7.5,
         bubbleFunc:() => `hsla(${200 + Math.random() * 50}, 100%, 65%, .1)`,
         bubbles:150,
       });
     </script>
-    -->
   </body>
 </html>
