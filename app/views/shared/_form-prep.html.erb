@@ -1,4 +1,4 @@
 <%= simple_form_for(@cocktail) do |f| %>
-	<%= f.input :instruction, as: :text %>
-	<%= f.submit 'Edit', :class => "btn btn-add w-100" %>
+	<%= f.input :instruction, as: :text, label: "Write a prep "%>
+	<%= f.submit 'Post', :class => "btn btn-edit w-100" %>
 <% end %>

@@ -1,6 +1,6 @@
 <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :category, collection: $categories %>
-    <%= f.input :alcoholic, collection: $alcoholics %>
-    <%= f.input :glass, collection: $glasses %>
-	<%= f.submit 'Edit', :class => "btn btn-add w-100" %>
+    <%= f.input :category, collection: $categories, as: :select %>
+    <%= f.input :alcoholic, collection: $alcoholics, as: :select  %>
+    <%= f.input :glass, collection: $glasses, as: :select %>
+	<%= f.submit 'Post', :class => "btn btn-edit w-100" %>
 <% end %>

@@ -59,12 +59,12 @@
 
 	.effect-1 {
 		animation: rotate 1.8s linear infinite;
-		background: cyan;
+		background: $max-blue-green;
 	}
 	
 	.effect-2 {
 		animation: rotate 1.2s linear reverse infinite;
-		background: #e7a9ff;
+		background: $fiery-rose;
 	}
 
 	@keyframes rotate {
@@ -114,4 +114,8 @@
 	}
 	li {
 		list-style: none;
+	}
+
+	.bg-gray {
+		background-color: gray;
 	}
