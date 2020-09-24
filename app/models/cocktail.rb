@@ -4,9 +4,9 @@ class Cocktail < ApplicationRecord
 
 	has_one_attached :photo
 
-	$categories = Cocktail.distinct.pluck(:category)
-	$alcoholics = Cocktail.distinct.pluck(:alcoholic)
-	$glasses = Cocktail.distinct.pluck(:glass)
+	$categories = Cocktail.distinct.order(:category).pluck(:category).compact
+	$alcoholics = Cocktail.distinct.order(:alcoholic).pluck(:alcoholic).compact
+	$glasses = Cocktail.distinct.order(:glass).pluck(:glass).compact
 
 	include PgSearch::Model
 		pg_search_scope :search_by_name,
