@@ -46,7 +46,7 @@
 .cocktail-drop {
     max-height: 485px;
     min-width: 275px;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 15px 30px;
 }
 .cocktail-drop label {
@@ -55,10 +55,7 @@
 .cocktail-drop legend {
     display: none;
 }
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+
 /* Button delete Doses*/
 #bin:hover {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
