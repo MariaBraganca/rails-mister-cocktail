@@ -1,24 +1,24 @@
-# README
+# Mister Cocktail 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Mister Cocktail is a Ruby on Rails Application for all cocktail lovers around the world!
 
-Things you may want to cover:
+This project was initially built within the scope of the Bootcamp at Le Wagon with Ruby, HTML, CSS and JavaScript.
 
-* Ruby version
+Later on, I've spent time optimizing the database seeding, search and filters as well as creating an overall enjoyable user experience
 
-* System dependencies
+#
 
-* Configuration
+## Stack
+* Github
+* Ruby on Rails
+* Sqlite
+* Heroku
 
-* Database creation
+## Libraries
+* PG Search
+* Bootstrap
+* Cloudinary
+* bubbly-bg
 
-* Database initialization
+![Image of Mister Cocktail](https://res.cloudinary.com/db5jh0zwo/image/upload/v1602230493/profile/cocktail-x.gif)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
