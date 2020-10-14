@@ -19,14 +19,15 @@ This project was initially built within the scope of the Bootcamp at Le Wagon wi
 ## Goal and Process
 The purpose of this project is to allow users to search, filter and create their own cocktails.
 
-### Phase 1
-For the database seeding, I parsed data from the test API key available at the cocktail db. Furthermore, I used PG Search to allow the user to search for a specific cocktail or ingredient.
+For the database seeding, I parsed data from the test API key available at the cocktail db. Furthermore, I used *PG Search* to allow the user to search for a specific cocktail or ingredient.
 
-### Phase 2
 On the cocktail's model I've created 3 collections for category, alcoholic and glass. The filters, located on the navigation bar, were easily set up using dropdown menus and simple form.
 
-### Phase 3
-CRUD methods were implemented on the cocktail's and dose's controllers for user interaction. Regarding the hosting and uploading of images, I've worked with Cloudinary.
+CRUD methods were implemented on the cocktail's and dose's controllers for user interaction. Regarding the hosting and uploading of images, I've worked with *Cloudinary*.
+
+For more information visit my profile page
+[MB Profile Page](https://mariabraganca.github.io/profile/pr_mrcocktail.html)
+
 
 ## Live Preview
 [MB Mister Cocktail](https://secret-plains-56444.herokuapp.com/)
