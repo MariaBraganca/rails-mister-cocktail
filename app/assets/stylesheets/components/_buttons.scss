@@ -1,42 +1,28 @@
+/* Buttons User Actions */
+.btn-search,
+.btn-add,
+.btn-filter,
+.btn-edit {
+    color: white;
+    transition: background 0.3s ease;
+    font-family: 'Josefin Sans', sans-serif;
+}
 .btn-search {
     background-color: $max-blue-green;
-    color: white;
-    transition: background 0.3s ease;
-    font-family: 'Josefin Sans', sans-serif;
 }
-
 .btn-add {
     background-color: $fiery-rose;
-    color: white;
-    transition: background 0.3s ease;
-    font-family: 'Josefin Sans', sans-serif;
 }
-
 .btn-filter {
     background-color: $blue-violet;
-    color: white;
-    transition: background 0.3s ease;
-    font-family: 'Josefin Sans', sans-serif;
 }
-
-.btn-dose {
-    background-color: $aero-blue;
-    color: white;
-    transition: background 0.3s ease;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
 .btn-edit {
     background-color: $maise-crayola;
-    color: white;
-    transition: background 0.3s ease;
-    font-family: 'Josefin Sans', sans-serif;
 }
-
+/* Buttons User Actions on Hover */
 .btn-search:hover,
 .btn-add:hover,
 .btn-filter:hover,
-.btn-dose:hover,
 .btn-edit:hover {
     color: white;
 }
@@ -49,52 +35,37 @@
 .btn-filter:hover {
     background-color: darken($blue-violet, 15%);
 }
-.btn-dose:hover {
-    background-color: darken($aero-blue, 15%);
-}
 .btn-edit:hover {
     background-color: darken($maise-crayola, 15%);
 }
-
-.btn-outline-add {
-    border: 1px solid hsl(283, 100%, 80%);
-    color:hsl(283, 100%, 80%);
-    font-family: 'Josefin Sans', sans-serif;
-    transition: background 0.3s ease;
+.btn-fix {
+    position: sticky;
+    bottom: 0;
 }
-
-.btn-outline-add:hover {
-    color: hsl(283, 100%, 75%);
-    border: 1px solid hsl(283, 100%, 75%);
-}
-
+/* Dropdown Menu */
 .cocktail-drop {
-    max-height: 600px;
+    max-height: 485px;
     min-width: 275px;
     overflow-y: scroll;
     padding: 15px 30px;
 }
-
 .cocktail-drop label {
     padding-bottom: 5px;
 }
-
+.cocktail-drop legend {
+    display: none;
+}
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-
-.cocktail-drop legend {
-    display: none;
-}
-
+/* Button delete Doses*/
 #bin:hover {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
 }
-
 @keyframes shake {
     10%, 90% {
       transform: translate3d(-1px, 0, 0);

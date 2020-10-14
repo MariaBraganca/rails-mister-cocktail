@@ -44,7 +44,7 @@
         <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
           <%= simple_form_for :search_glass, url: root_path, method: "GET" do |f| %>
             <%= f.input :glass, collection: $glasses, label: false, as: :check_boxes %>
-            <%= f.submit "Filter", class: "btn btn-filter w-100" %>
+            <%= f.submit "Filter", class: "btn btn-filter btn-fix w-100" %>
           <% end %>
         </div>
       </li>
@@ -67,11 +67,11 @@
         <%#= link_to "Add a cocktail", new_cocktail_path, :class => "btn btn-add" %>
         <!-- Button trigger modal -->
         <% if current_page?(root_path) %>
-          <button type="button" class="btn btn-add" data-toggle="modal" data-target="#cocktailModal">
+          <button type="button" class="btn btn-add mt-2 mt-lg-0" data-toggle="modal" data-target="#cocktailModal">
             Add cocktail
           </button>
         <% else %>
-          <button type="button" class="btn btn-edit" data-toggle="modal" data-target="#cocktailModalEdit">
+          <button type="button" class="btn btn-edit mt-2 mt-lg-0" data-toggle="modal" data-target="#cocktailModalEdit">
             Edit cocktail
           </button>
         <% end %>
