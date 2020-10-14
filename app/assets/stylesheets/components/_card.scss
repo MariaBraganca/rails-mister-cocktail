@@ -1,123 +1,102 @@
-	.card-cocktail {
-		height: 84%;
-		width: 84%;
-		margin: 8%;
-		background-size: cover;
-		background-position: center;
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-		font-family: 'Josefin Sans', sans-serif;
-		font-size: 100%;
-		position: relative;
-		z-index: 2;
+/* Card Cocktail Show */
+.card-cocktail-img {
+	background-size: cover;
+	background-position: center;
+	width: 95%;
+	padding-top: 95%;
+	border-radius: 50%;
+}
+/* Card Cocktail Index */
+.card-cocktail {
+	height: 84%;
+	width: 84%;
+	margin: 8%;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	font-family: 'Josefin Sans', sans-serif;
+	position: relative;
+	z-index: 2;
+}
+/* SVG Text */
+text {
+	fill: white;
+	text-anchor: start;
+	font-size: 18px;
+}
+path {
+	fill: transparent;
+}
+/* Card Cocktail Animation */
+.drink {
+	position: relative;
+}
+.drink:hover .effect-1,
+.drink:hover .effect-2 {
+	display: block;
+}
+.effect-1,
+.effect-2 {
+	display: none;
+	mix-blend-mode: multiply;
+	opacity: 1;
+	position: absolute;
+	height: 84%;
+	width: 84%;
+	border-radius: 50%;
+	z-index: 1;
+}
+.effect-1 {
+	animation: rotate 1.8s linear infinite;
+	background: $max-blue-green;
+}
+.effect-2 {
+	animation: rotate 1.2s linear reverse infinite;
+	background: $fiery-rose;
+}
+@keyframes rotate {
+	0% {
+		top: 0;
+		left: 8%;
 	}
-
-	text {
-		fill: white;
-		text-anchor: start;
-		font-size: 18px;
+	25% {
+		top: 8%;
+		left: 0%;
 	}
-
-	path {
-		fill: transparent;
+	50% {
+		top: 16%;
+		left: 8%;
 	}
-
-	.drink {
-		position: relative;
+	75% {
+		top: 8%;
+		left: 16%;
 	}
-
-	.card-cocktail-img {
-		background-size: cover;
-		background-position: center;
-		width: 95%;
-		padding-top: 95%;
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-family: 'Josefin Sans', sans-serif;
-		color: white;
+	100% {
+		top: 0;
+		left: 8%;
 	}
-
-  .drink:hover .effect-1,
-	.drink:hover .effect-2 {
-		display: block;
-	}
-
-	.effect-1,
-	.effect-2 {
-		display: none;
-		mix-blend-mode: multiply;
-		opacity: 1;
-		position: absolute;
-		height: 84%;
-		width: 84%;
-		border-radius: 50%;
-		z-index: 1;
-	}
-
-	.effect-1 {
-		animation: rotate 1.8s linear infinite;
-		background: $max-blue-green;
-	}
-	
-	.effect-2 {
-		animation: rotate 1.2s linear reverse infinite;
-		background: $fiery-rose;
-	}
-
-	@keyframes rotate {
-		0% {
-			top: 0;
-			left: 8%;
-		}
-		25% {
-			top: 8%;
-			left: 0%;
-		}
-		50% {
-			top: 16%;
-			left: 8%;
-		}
-		75% {
-			top: 8%;
-			left: 16%;
-		}
-		100% {
-			top: 0;
-			left: 8%;
-		}
-	}
-
-  a {
-		text-decoration: none;
-		color: inherit;
-	}
-	
-	a:hover {
-		text-decoration: none;
-		color: inherit;
-  }
-
-  .heading {
+}
+/* Links */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+/* Lists */
+ul {
+	padding-left: 0;
+}
+li {
+	list-style: none;
+}
+/* Tables */
+.heading {
 	padding-bottom: 10px;
 	border-bottom: 2px solid black;
-  }
-  	.card-table {
-	  padding: 10px 0px;
-	}
-
-
-	ul {
-		padding-left: 0;
-	}
-	li {
-		list-style: none;
-	}
-
-	.bg-gray {
-		background-color: gray;
-	}
+}
+.card-table {
+	padding: 10px 0px;
+}
