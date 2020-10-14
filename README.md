@@ -25,10 +25,10 @@ On the cocktail's model I've created 3 collections for category, alcoholic and g
 
 CRUD methods were implemented on the cocktail's and dose's controllers for user interaction. Regarding the hosting and uploading of images, I've worked with *Cloudinary*.
 
-For more information visity my [Profile Page](https://mariabraganca.github.io/profile/pr_mrcocktail.html)
+Visit my [Profile Page](https://mariabraganca.github.io/profile/pr_mrcocktail.html) for more information.
 
 ## Live Preview
-👉 [MB Mister Cocktail](https://secret-plains-56444.herokuapp.com/)
+🍸 [MB Mister Cocktail](https://secret-plains-56444.herokuapp.com/)
 
 
 ## Screenshot
