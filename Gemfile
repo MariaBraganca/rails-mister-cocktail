@@ -39,9 +39,6 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 # Popperjs
 gem 'popper_js', '~> 1.14.5'
 
-# Tags gem
-gem 'acts-as-taggable-on', '~> 6.0'
-
 # pg search gem
 gem 'pg_search'
 
