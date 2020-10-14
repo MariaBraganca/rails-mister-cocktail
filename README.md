@@ -4,11 +4,9 @@ Mister Cocktail is a Ruby on Rails Application for all cocktail lovers around th
 
 This project was initially built within the scope of the Bootcamp at Le Wagon with Ruby, HTML, CSS and JavaScript.
 
-Later on, I've spent time optimizing the database seeding, search and filters as well as creating an overall enjoyable user experience
+Later on, I've spent time optimizing the database seeding, search and filters as well as creating an overall enjoyable user experience.
 
-#
-
-## Stack
+## Web Stack
 * Github
 * Ruby on Rails
 * Sqlite
@@ -20,5 +18,5 @@ Later on, I've spent time optimizing the database seeding, search and filters as
 * Cloudinary
 * bubbly-bg
 
-![Image of Mister Cocktail](https://res.cloudinary.com/db5jh0zwo/image/upload/v1602230493/profile/cocktail-x.gif)
+![Gif Cocktail](https://res.cloudinary.com/db5jh0zwo/image/upload/v1602230493/profile/cocktail-x.gif)
 
