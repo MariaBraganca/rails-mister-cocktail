@@ -28,7 +28,7 @@ CRUD methods were implemented on the cocktail's and dose's controllers for user 
 Visit my [Profile Page](https://mariabraganca.github.io/profile/pr_mrcocktail.html) for more information.
 
 ## Live Preview
-🍸 [MB Mister Cocktail](https://secret-plains-56444.herokuapp.com/)
+🍸 [MB Mister Cocktail](https://mb-mister-cocktail.herokuapp.com/)
 
 
 ## Screenshot
