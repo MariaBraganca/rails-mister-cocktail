@@ -2,7 +2,7 @@
 
 Mister Cocktail is a Ruby on Rails Application for all cocktail lovers around the world!
 
-This project was initially built within the scope of the Bootcamp at Le Wagon with Ruby, HTML, CSS and JavaScript. Later on, I've spent time optimizing the database seeding, search and filters as well as creating an overall enjoyable user experience.
+This project was initially built within the scope of the Bootcamp at Le Wagon with Ruby, HTML, SCSS and JavaScript. Later on, I've spent time optimizing the database seeding, search and filters as well as creating an overall enjoyable user experience.
 
 ## Web Stack
 * Github
